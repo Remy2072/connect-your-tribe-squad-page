@@ -1,10 +1,25 @@
 <%- include('./partials/head') %>
+<%- include('./partials/header') %>
 
-<h2>Students</h2>
-<ul>
+<section>
   <% persons.forEach(person => { %>
-    <li><a href="./person/<%= person.id %>"><%= person.name %></a>, squad_id <%= person.squad_id %></li>
+  <div>
+    <div class="logo">
+      <img src="<%= person.avatar %>" alt="foto">
+    </div>
+    <h2><%= person.name %></h2>
+    <h3><%= person.nickname %></h3>
+    <p><%= person.bio %></p>
+    <ul>
+      <li>
+        <a href="<%= person.github_handle %>"><box-icon name='github' type='logo' color='#ffffff' size='md'></box-icon></a>
+      </li>
+      <li>
+        <a href="<%= person.website %>"><box-icon name='world' color='#ffffff'size='md'></box-icon></a>
+      </li>
+    </ul>
+  </div>
   <% }) %>
-</ul>
+</section>
 
 <%- include('./partials/foot') %>
